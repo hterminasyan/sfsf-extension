@@ -1,1 +1,1 @@
-# sfsf-extension
+# SAP SuccessFactors Extensibiliy Hands-On
