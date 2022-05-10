@@ -374,9 +374,55 @@ For this scenario we are interested in API to access the employment related info
 
 3.1. Start your project localy using **cds** cli
 
-
 ````zsh
  cds watch
 ````
 
 ![BAS](./images/bas_cdswatch.png)
+
+3.2. Once the service is running, open and explore the exposed APIs. 
+
+* Entity **"Employee"** will not contain any data, since it is based on local persistence
+* Entity **"EmpEmployment"** will show the data from API Sandbox based on defined fields
+
+
+![BAS](./images/bas_metadata.png)
+
+
+3.3. To test the APIs we can use the REST Client which is by default available in SAP Business Application Studio. For that create new file with *.http* extension in *srv* folder. e.g.  **srv/request.http** and add following content
+
+````http
+
+##### Get the history recordes with calculated seniority from local persistency
+
+GET http://localhost:4004/employee/Employee
+Content-Type: application/json
+
+##### Simulate the Event which is triggered from SuccessFactors system 
+
+POST http://localhost:4004/employee/simulateEvent
+Content-Type: application/json
+
+{ 
+    "userId": "12330",
+    "hireDate": "2021-11-16T00:00:00Z",
+    "originalStartDate": "2021-11-16T00:00:00Z", 
+    "terminationDate": null,
+    "status": "HIRENEW"
+}
+
+````
+
+3.3. For local testing we can simulate the event which is triggered from SuccessFactors system. Execute the POST request which will trigger the event and add some data to local sqlite database.
+
+![BAS](./images/bas_eventsimulate.png)
+
+
+3.4. Now execute the GET request to get the history recordes with calculated seniority from local persistency
+
+![BAS](./images/bas_httpget.png)
+
+3.5. Finally explore the **emp-service.js** to understand the application logic and see when which function is executed.
+
+
+##  4 - Generate a Fronted for Data Service using the Fiori Elements 
