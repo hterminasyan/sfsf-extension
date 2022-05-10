@@ -426,3 +426,143 @@ Content-Type: application/json
 
 
 ##  4 - Generate a Fronted for Data Service using the Fiori Elements 
+
+In this part we are going to add/generate a fronted which will consume the service exposed in previous steps. 
+
+4.1. Right click on *mta.yaml* file and create new module from templyte: **Create MTA Module from Template**
+
+![BAS](./images/bas_addui.png)
+
+4.2. Select **SAP Fiori application** and press *Start*
+
+![BAS](./images/bas_fioriapp.png)
+
+
+4.3. Now choose the template you would like to use for your frontend. Select *List Report Object Page*
+
+![BAS](./images/bas_fioritemplate.png)
+
+4.4. First, choose the Data Source. In this case it is **Use a Local CAP Project** Then select the project folder and finnaly choose **EmployeeService (Node.js)** OData service.
+
+![BAS](./images/bas_datasource.png)
+
+4.5. Select the **Employee** as a main entity.
+
+![BAS](./images/bas_entity.png)
+
+4.6. Add the project atributes like name, title, etc. 
+* Module name - fiori
+* Application Title - Seniority Calculator
+* Namespace - com.sap.demo
+* Decription - Seniority Calculator
+
+Leave all other attributes as it is and finish.
+
+![BAS](./images/bas_fioridetails.png)
+
+4.7. It will generate the frontend and you can find it in **app** folder
+
+![BAS](./images/bas_fioristructure.png)
+
+4.8. In the file **annotations.cds** all UI annotations are defined, which basicly defines the Frontend structure.
+     In case the generated file dosen't contain any annotations, plese replace the file with following content.
+
+````js
+
+using EmployeeService as service from '../../srv/emp-service';
+
+annotate service.Employee with @(
+    UI.LineItem : [
+        {
+            $Type : 'UI.DataField',
+            Label : 'User ID',
+            Value : userId,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Hire Date',
+            Value : hireDate,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Termination Date',
+            Value : terminationDate,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Original Start Date',
+            Value : originalStartDate,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : 'Status',
+            Value : status,
+        },
+    ]
+);
+annotate service.Employee with @(
+    UI.FieldGroup #GeneratedGroup1 : {
+        $Type : 'UI.FieldGroupType',
+        Data : [
+            {
+                $Type : 'UI.DataField',
+                Label : 'User ID',
+                Value : userId,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Hire Date',
+                Value : hireDate,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Termination Date',
+                Value : terminationDate,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Original Start Date',
+                Value : originalStartDate,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Status',
+                Value : status,
+            },
+            {
+                $Type : 'UI.DataField',
+                Label : 'Seniority',
+                Value : seniority,
+            },
+        ],
+    },
+    UI.Facets : [
+        {
+            $Type : 'UI.ReferenceFacet',
+            ID : 'GeneratedFacet1',
+            Label : 'General Information',
+            Target : '@UI.FieldGroup#GeneratedGroup1',
+        },
+    ]
+);
+
+````
+
+
+4.9. Before trying, first we need to create some data to display in frontend. Use the **request.http** to create 2 entries
+
+![BAS](./images/bas_createdata.png)
+
+
+4.10. Now on the exposed service page you will find a link to Web Application. Open it to run the frontend
+
+![BAS](./images/bas_webapp.png)
+
+4.11. Press the **Go** button to display the data
+
+![BAS](./images/bas_fioriresult.png)
+
+
+## Summary
+
+Congratulations! You have succesfully created your first SAP SuccessFactors Extension Application on SAP BTP.
