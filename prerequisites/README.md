@@ -71,4 +71,4 @@ This page will display the current state of the subaccount. You can manage your 
 
 ## Summary
 
-Congratulations! You have succesfully created your personal SAP BTP trial account! Yo
+Congratulations! You have succesfully created your personal SAP BTP trial account! 
