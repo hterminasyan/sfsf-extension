@@ -1,7 +1,7 @@
 
 # Setting up SAP BTP Trial
 
-The objective of the exercise is to create a SAP BTP Trial account that you can further use throughout this course and beyond. 
+The objective of the guide is to create a SAP BTP Trial account that you can further use for hands-on. 
 
 If you already have an SAP BTP Trial account, you don't need to create a new one or move its content to a subaccount in another region! You can then skip this whole unit.
 

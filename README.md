@@ -3,8 +3,8 @@
 ## Content
 
 ### [Prerequisites](./prerequisites/README.md)
-### [Hands-On](./hands-on/README.md)
-### [Source Code](./code/)
+### [Hands-On](./)
+### [Source Code](./)
 
 ## Requirements
   * A BTP global account or [trial account](https://www.sap.com/products/business-technology-platform/trial.html)
