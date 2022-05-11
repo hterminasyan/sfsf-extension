@@ -51,7 +51,7 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 
 1.7 Here, you can now create a subaccount that lives in a geographic region. Choose any region from this list and click **Create Account** to trigger the provisioning process.
 
-![Trial Region](./images/trial_chooseregion.png)
+![Trial Region](./images/trial_choose_region.png)
 
 1.8 You will then see a dialog box while the account is set up. When complete, click **Continue** to close to popup and to navigate to the new account.
 
@@ -63,7 +63,7 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 
 > Make yourself familiar with the [basic concepts of SAP Business Technology Platform](https://developers.sap.com/tutorials/cp-trial-quick-onboarding.html) to make the most of your trial experience.
 
-![Trial Global Account](./images/trial_globalaccount.png)
+![Trial Global Account](./images/trial_global_account.png)
 
 This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
 
