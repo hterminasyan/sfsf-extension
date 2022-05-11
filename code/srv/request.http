@@ -1,0 +1,17 @@
+##### Get the history recordes with calculated seniority from local persistency
+
+GET http://localhost:4004/employee/Employee
+Content-Type: application/json
+
+##### Simulate the Event which is triggered from SuccessFactors system 
+
+POST http://localhost:4004/employee/simulateEvent
+Content-Type: application/json
+
+{ 
+    "userId": "12336",
+    "hireDate": "2021-11-10T00:00:00Z",
+    "originalStartDate": "2021-11-12T00:00:00Z", 
+    "terminationDate": null,
+    "status": "HIRENEW"
+}
