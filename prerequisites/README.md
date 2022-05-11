@@ -7,7 +7,7 @@ If you already have an SAP BTP Trial account, you don't need to create a new one
 
 ## Step 1 - Setting up BTP Trial
 
-In this unit we lay the foundation for the other weeks in this course. You will frequently use SAP Business Technology Platform services that are part of the SAP Business Technology Platform Trial. In the following you will create your own trial account. 
+In the following you will create your own trial account. 
 
 ---
 
@@ -67,7 +67,7 @@ You will see one main button on the welcome screen of the SAP BTP Cockpit. Click
 
 This page will display the current state of the subaccount. You can manage your subscriptions and jump into the different runtime environments. It also shows you fundamental information of the Cloud Foundry environment, such as the API endpoint and the available spaces.
 
-![Trial Subaccount](./images/trial_globalaccount.png)
+![Trial Subaccount](./images/trial_subaccount.png)
 
 ## Summary
 
