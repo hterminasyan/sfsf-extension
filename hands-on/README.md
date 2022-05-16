@@ -230,7 +230,7 @@ For this scenario we are interested in API to access the employment related info
 
 ![BAS](./images/bas_cdsimport.png)
 
-2.11. Open your project descriptor **package.json** and replace it by using following snipped
+2.11. Open your project descriptor **package.json** and replace it by using following snippet
 
 ````json
 {
